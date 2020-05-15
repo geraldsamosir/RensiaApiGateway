@@ -10,7 +10,7 @@ import (
 
 type HttpServer interface {
 	RunServer(port string)
-	router()
+	router(r *echo.Echo) *echo.Echo
 }
 
 func handler(ctx echo.Context) error {
