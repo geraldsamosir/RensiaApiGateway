@@ -25,15 +25,15 @@ func routers(r *echo.Echo) *echo.Echo {
 	rbacServicesHandler := router.NewRbacServiceRouter()
 
 	//root router
-	roohandler := r.Group("/auth")
+	roothandler := r.Group("/auth")
 
 	//routers
-	roohandler.POST("/", authHandler.LoginUser)
-	roohandler.POST("/register", authHandler.RegisterUser)
-	roohandler.POST("/soc-med/login", authHandler.LoginUserSocMed)
-	roohandler.POST("/soc-med", authHandler.RegisterUserSocmed)
-	roohandler.GET("/rbac-services", rbacServicesHandler.CheckAllowAccess)
-	roohandler.GET("/rbac-frontend", rbacFrontendHandler.CheckAllowAccess)
+	roothandler.POST("/", authHandler.LoginUser)
+	roothandler.POST("/register", authHandler.RegisterUser)
+	roothandler.POST("/soc-med/login", authHandler.LoginUserSocMed)
+	roothandler.POST("/soc-med", authHandler.RegisterUserSocmed)
+	roothandler.GET("/rbac-services", rbacServicesHandler.CheckAllowAccess)
+	roothandler.GET("/rbac-frontend", rbacFrontendHandler.CheckAllowAccess)
 
 	//return router
 	return r
