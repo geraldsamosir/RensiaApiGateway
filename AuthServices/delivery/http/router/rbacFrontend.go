@@ -7,12 +7,14 @@ import (
 	"github.com/labstack/echo"
 )
 
-type RbacFrontendRouter struct {
-}
+type (
+	RbacFrontendRouter struct {
+	}
 
-type RbacFrontend interface {
-	CheckAllowAccess(ctx echo.Context) error
-}
+	RbacFrontend interface {
+		CheckAllowAccess(ctx echo.Context) error
+	}
+)
 
 func NewRbacFrontendRouter() *RbacFrontendRouter {
 	return &RbacFrontendRouter{}

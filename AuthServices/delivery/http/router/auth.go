@@ -7,16 +7,17 @@ import (
 	"github.com/labstack/echo"
 )
 
-type AuthRouter struct {
-}
-
-type auth interface {
-	RegisterUser(ctx echo.Context) error
-	LoginUser(ctx echo.Context) error
-	ForgotPassword(ctc echo.Context) error
-	LoginUserSocMed(ctc echo.Context) error
-	RegisterUserSocmed(ctc echo.Context) error
-}
+type (
+	AuthRouter struct {
+	}
+	auth interface {
+		RegisterUser(ctx echo.Context) error
+		LoginUser(ctx echo.Context) error
+		ForgotPassword(ctc echo.Context) error
+		LoginUserSocMed(ctc echo.Context) error
+		RegisterUserSocmed(ctc echo.Context) error
+	}
+)
 
 func NewAuthRouter() *AuthRouter {
 	return &AuthRouter{}

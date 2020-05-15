@@ -7,12 +7,14 @@ import (
 	"github.com/labstack/echo"
 )
 
-type RbacServiceRouter struct {
-}
+type (
+	RbacServiceRouter struct {
+	}
 
-type RbacService interface {
-	CheckAllowAccess(ctx echo.Context) error
-}
+	RbacService interface {
+		CheckAllowAccess(ctx echo.Context) error
+	}
+)
 
 func NewRbacServiceRouter() *RbacServiceRouter {
 	return &RbacServiceRouter{}
